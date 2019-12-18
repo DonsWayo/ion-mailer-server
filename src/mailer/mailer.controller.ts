@@ -13,15 +13,14 @@ export class MailerController {
         console.log(mail)
 
 
-
         let transporter = nodemailer.createTransport({
            host: mail.smtp,
            port: mail.port,
            secure: mail.secure,
-        //   tls: {
-        //     rejectUnauthorized: mail.tls
-        //   },
-        //   requireTLS: mail.requireTLS,
+           tls: {
+             rejectUnauthorized: mail.tls
+           },
+          requireTLS: mail.requireTLS,
           auth: {
             user: mail.user,
             pass: mail.pass
